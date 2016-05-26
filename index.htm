@@ -9,21 +9,22 @@
 https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </header>
+
 <body>
     <div class="gridster">
         <ul>
-        <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-            <div id="chart_01" style="width: 350px; height:350px;"></div>
-        </li>
-        <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
-            <div id="chart_02" style="width: 350px; height:350px;"></div>
-        </li>
-        <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
-            <div id="chart_03" style="width: 350px; height:350px;"></div>
-        </li>
-        <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-            <div id="chart_04" style="width: 350px; height:350px;"></div>
-        </li>
+            <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+                <div id="chart_01" style="width: 350px; height:350px;"></div>
+            </li>
+            <li data-row="1" data-col="2" data-sizex="1" data-sizey="1">
+                <div id="chart_02" style="width: 350px; height:350px;"></div>
+            </li>
+            <li data-row="1" data-col="3" data-sizex="1" data-sizey="1">
+                <div id="chart_03" style="width: 350px; height:350px;"></div>
+            </li>
+            <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+                <div id="chart_04" style="width: 350px; height:350px;"></div>
+            </li>
         </ul>
     </div>
 
@@ -32,14 +33,14 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
 
         $(function() {
 
-          gridster = $(".gridster > ul").gridster({
-            widget_margins: [10, 10],
-            widget_base_dimensions: [350, 350],
-            min_cols: 3,
-            resize: {
-              enabled: true
-            }
-          }).data('gridster');
+            gridster = $(".gridster > ul").gridster({
+                widget_margins: [10, 10],
+                widget_base_dimensions: [350, 350],
+                min_cols: 3,
+                resize: {
+                    enabled: true
+                }
+            }).data('gridster');
 
         });
     </script>
@@ -54,17 +55,17 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
             },
             tooltip: {},
             legend: {
-                data:['Sales']
+                data: ['Sales']
             },
             toolbox: {
                 feature: {
                     saveAsImage: {
-                      title: 'Save as Image'
+                        title: 'Save as Image'
                     }
                 }
             },
             xAxis: {
-                data: ["Shose","Shirt","Skirt","Suit","Sweater","Scarf"]
+                data: ["Shose", "Shirt", "Skirt", "Suit", "Sweater", "Scarf"]
             },
             yAxis: {},
             series: [{
@@ -89,15 +90,15 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
             toolbox: {
                 feature: {
                     saveAsImage: {
-                      title: 'Save as Image'
+                        title: 'Save as Image'
                     }
                 }
             },
             legend: {
-                data:['Sales']
+                data: ['Sales']
             },
             xAxis: {
-                data: ["Shose","Shirt","Skirt","Suit","Sweater","Scarf"]
+                data: ["Shose", "Shirt", "Skirt", "Suit", "Sweater", "Scarf"]
             },
             yAxis: {},
             series: [{
@@ -105,10 +106,13 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
                 type: 'line',
                 data: [5, 20, 36, 10, 10, 20],
                 markPoint: {
-                    data: [
-                        {type: 'max', name: '最大值'},
-                        {type: 'min', name: '最小值'}
-                    ]
+                    data: [{
+                        type: 'max',
+                        name: '最大值'
+                    }, {
+                        type: 'min',
+                        name: '最小值'
+                    }]
                 },
             }]
         };
@@ -119,46 +123,49 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
         var chart_03 = echarts.init(document.getElementById('chart_03'));
 
         option = {
-            title : {
+            title: {
                 text: 'This is a pie chart',
-                x:'center'
+                x: 'center'
             },
-            tooltip : {
+            tooltip: {
                 trigger: 'item',
                 formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             toolbox: {
                 feature: {
                     saveAsImage: {
-                      title: 'Save as Image'
+                        title: 'Save as Image'
                     }
                 }
             },
             legend: {
                 orient: 'vertical',
                 left: 'left',
-                data: ['Direct','Referer','Mail']
+                data: ['Direct', 'Referer', 'Mail']
             },
-            series : [
-                {
-                    name: 'Source',
-                    type: 'pie',
-                    radius : '55%',
-                    center: ['50%', '60%'],
-                    data:[
-                        {value:335, name:'Direct'},
-                        {value:310, name:'Referer'},
-                        {value:234, name:'Mail'},
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
+            series: [{
+                name: 'Source',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '60%'],
+                data: [{
+                    value: 335,
+                    name: 'Direct'
+                }, {
+                    value: 310,
+                    name: 'Referer'
+                }, {
+                    value: 234,
+                    name: 'Mail'
+                }, ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
                 }
-            ]
+            }]
         };
 
         chart_03.setOption(option);
@@ -167,43 +174,51 @@ https://cdnjs.cloudflare.com/ajax/libs/jquery.gridster/0.5.6/jquery.gridster.min
         var chart_04 = echarts.init(document.getElementById('chart_04'));
 
         option = {
-            tooltip : {
+            tooltip: {
                 formatter: "{a} <br/>{b} : {c}%"
             },
             toolbox: {
                 feature: {
                     saveAsImage: {
-                      title: 'Save as Image'
+                        title: 'Save as Image'
                     }
                 }
             },
-            series: [
-                {
-                    name: 'CPU',
-                    type: 'gauge',
-                    axisLine: {
-                        lineStyle: {
-                            width: 10
-                        }
-                    },
-                    axisTick: {            // 坐标轴小标记
-                        show: false
-                    },
-                    splitLine: {           // 分隔线
-                        length: 20,         // 属性length控制线长
-                        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
-                            color: 'auto'
-                        }
-                    },
-                    detail: {formatter:'{value}%'},
-                    data: [{value: 50, name: 'CPU Utilization'}]
-                }
-            ]
+            series: [{
+                name: 'CPU',
+                type: 'gauge',
+                axisLine: {
+                    lineStyle: {
+                        width: 10
+                    }
+                },
+                axisTick: {
+                    show: false
+                },
+                splitLine: {
+                    length: 20,
+                    lineStyle: {
+                        color: 'auto'
+                    }
+                },
+                title: {
+                    textStyle: {
+                        fontWeight: 'bolder'
+                    }
+                },
+                detail: {
+                    formatter: '{value}%'
+                },
+                data: [{
+                    value: 50,
+                    name: 'CPU Utilization'
+                }]
+            }]
         };
 
         chart_04.setOption(option);
-
     </script>
 
 </body>
+
 </html>
